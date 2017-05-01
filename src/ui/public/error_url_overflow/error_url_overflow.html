@@ -1,17 +1,17 @@
 <div class="app-container error-url-overflow-app">
   <h3>
-    <i aria-hidden="true" class="fa fa-warning text-danger"></i> Woah there!
+    <i aria-hidden="true" class="fa fa-warning text-danger"></i> 哇哟!
   </h3>
   <p>
-    That's a big URL you have there. I have some unfortunate news: Your browser doesn't play nice with Kibana's bacon-double-cheese-burger-with-extra-fries sized URL. To keep you from running into problems Kibana limits URLs in your browser to {{controller.limit}} characters for your safety.
+    这是一个大长URL。您的浏览器并不能很好地与Kibana的bacon-double-cheese-burger-with-extra-fries sized URL工作。 为了避免遇到问题，Kibana将浏览器中的URL限制为{{controller.limit}}个字符，以确保您的安全。
   </p>
 
-  <h3>Ok, how do I fix this?</h3>
-  <p>This usually only happens with big, complex dashboards, so you have some options:</p>
+  <h3>如何解决这个问题?</h3>
+  <p>这通常只发生在大型，复杂的仪表板上，所以你有一些选择:</p>
   <ol>
-    <li>Enable the <code>state:storeInSessionStorage</code> option in the <a href="#/management/kibana/settings">advanced settings</a>. This will prevent the URLs from getting long, but makes them a bit less portable.</li>
-    <li>Remove some stuff from your dashboard. This will reduce the length of the URL and keep IE in a good place.</li>
-    <li>Don't use IE. Every other supported browser we know of doesn't have this limit.</li>
+    <li>在<a href="#/management/kibana/settings">高级设置</a>中启用<code>state：store SessionStorage </code>选项。 这样可以防止这些URL变得越来越长，但是它们的便携性却不太可观.</li>
+    <li>从仪表板中移除一些东西。 这将减少URL的长度，并保持IE在一个好的地方.</li>
+    <li>不要使用IE。 我们知道的每个其他支持的浏览器都没有这个限制.</li>
   </ol>
   <br>
   <br>

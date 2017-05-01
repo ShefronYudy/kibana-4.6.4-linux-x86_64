@@ -8,7 +8,7 @@ define(function (require) {
 
     return new VislibVisType({
       name: 'tile_map',
-      title: 'Tile map',
+      title: '块地图',
       icon: 'fa-map-marker',
       description: 'Your source for geographic maps. Requires an elasticsearch geo_point field. More specifically, a field ' +
        'that is mapped as type:geo_point with latitude and longitude coordinates.',
@@ -96,7 +96,7 @@ define(function (require) {
         {
           group: 'metrics',
           name: 'metric',
-          title: 'Value',
+          title: '值',
           min: 1,
           max: 1,
           aggFilter: ['count', 'avg', 'sum', 'min', 'max', 'cardinality'],
@@ -107,7 +107,7 @@ define(function (require) {
         {
           group: 'buckets',
           name: 'segment',
-          title: 'Geo Coordinates',
+          title: '地理坐标',
           aggFilter: 'geohash_grid',
           min: 1,
           max: 1

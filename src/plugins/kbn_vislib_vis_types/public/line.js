@@ -5,7 +5,7 @@ define(function (require) {
 
     return new VislibVisType({
       name: 'line',
-      title: 'Line chart',
+      title: '线形图',
       icon: 'fa-line-chart',
       description: 'Often the best chart for high density time series. Great for comparing one series to another. ' +
         'Be careful with sparse sets as the connection between points can be misleading.',
@@ -33,7 +33,7 @@ define(function (require) {
         {
           group: 'metrics',
           name: 'metric',
-          title: 'Y-Axis',
+          title: 'Y轴',
           min: 1,
           defaults: [
             { schema: 'metric', type: 'count' }
@@ -42,7 +42,7 @@ define(function (require) {
         {
           group: 'metrics',
           name: 'radius',
-          title: 'Dot Size',
+          title: '点大小',
           min: 0,
           max: 1,
           aggFilter: ['count', 'avg', 'sum', 'min', 'max', 'cardinality']
@@ -50,7 +50,7 @@ define(function (require) {
         {
           group: 'buckets',
           name: 'segment',
-          title: 'X-Axis',
+          title: 'X轴',
           min: 0,
           max: 1,
           aggFilter: '!geohash_grid'

@@ -55,7 +55,7 @@ define(function (require) {
   registry.register(_.constant({
     order: 2,
     name: 'advanced',
-    display: 'Advanced',
+    display: '高级',
     url: '#/settings/advanced'
   }));
 });

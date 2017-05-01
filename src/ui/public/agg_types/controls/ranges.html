@@ -1,10 +1,10 @@
 <table class="vis-editor-agg-editor-ranges form-group" ng-show="agg.params.ranges.length">
   <tr>
     <th>
-      <label>From</label>
+      <label>从</label>
     </th>
     <th colspan="2">
-      <label>To</label>
+      <label>到</label>
     </th>
   </tr>
 
@@ -41,12 +41,12 @@
 <div class="hintbox" ng-show="aggForm.rangeLength.$invalid">
   <p>
     <i class="fa fa-danger text-danger"></i>
-    <strong>Required:</strong> You must specify at least one range.
+    <strong>必填:</strong> 您必须指定至少一个范围.
   </p>
 </div>
 
 <div
   ng-click="agg.params.ranges.push({})"
   class="sidebar-item-button primary">
-  Add Range
+  添加范围
 </div>

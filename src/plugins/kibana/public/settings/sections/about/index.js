@@ -17,7 +17,7 @@ define(function (require) {
   registry.register(_.constant({
     order: 1001,
     name: 'about',
-    display: 'About',
+    display: '关于',
     url: '#/settings/about'
   }));
 });

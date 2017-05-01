@@ -5,7 +5,7 @@ define(function (require) {
 
     return new VislibVisType({
       name: 'histogram',
-      title: 'Vertical bar chart',
+      title: '直条图',
       icon: 'fa-bar-chart',
       description: 'The goto chart for oh-so-many needs. Great for time and non-time data. Stacked or grouped, ' +
       'exact numbers or percentages. If you are not sure which chart you need, you could do worse than to start here.',
@@ -30,7 +30,7 @@ define(function (require) {
         {
           group: 'metrics',
           name: 'metric',
-          title: 'Y-Axis',
+          title: 'Y轴',
           min: 1,
           aggFilter: '!std_dev',
           defaults: [
@@ -40,7 +40,7 @@ define(function (require) {
         {
           group: 'buckets',
           name: 'segment',
-          title: 'X-Axis',
+          title: 'X轴',
           min: 0,
           max: 1,
           aggFilter: '!geohash_grid'

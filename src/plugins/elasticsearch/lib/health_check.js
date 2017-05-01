@@ -21,13 +21,13 @@ module.exports = function (plugin, server) {
   var config = server.config();
   var client = server.plugins.elasticsearch.client;
 
-  plugin.status.yellow('Waiting for Elasticsearch');
+  plugin.status.yellow('等待Elasticsearch');
 
   function waitForPong() {
     return client.ping()['catch'](function (err) {
       if (!(err instanceof NoConnections)) throw err;
 
-      plugin.status.red(format('Unable to connect to Elasticsearch at %s.', config.get('elasticsearch.url')));
+      plugin.status.red(format('不能连接到Elasticsearch在 %s.', config.get('elasticsearch.url')));
 
       return Promise.delay(REQUEST_DELAY).then(waitForPong);
     });
@@ -67,17 +67,17 @@ module.exports = function (plugin, server) {
   function waitForShards() {
     return getHealth().then(function (health) {
       if (health === NO_INDEX) {
-        plugin.status.yellow('No existing Kibana index found');
+        plugin.status.yellow('未找到Kibana索引');
         return createKibanaIndex(server);
       }
 
       if (health === INITIALIZING) {
-        plugin.status.red('Elasticsearch is still initializing the kibana index.');
+        plugin.status.red('Elasticsearch仍在初始化kibana索引.');
         return Promise.delay(REQUEST_DELAY).then(waitForShards);
       }
 
       // otherwise we are g2g
-      plugin.status.green('Kibana index ready');
+      plugin.status.green('Kibana索引已就绪');
     });
   }
 

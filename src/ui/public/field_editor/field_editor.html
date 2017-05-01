@@ -1,24 +1,23 @@
 <form ng-submit="editor.save()" name="form">
   <div ng-if="editor.creating" class="form-group">
-    <label>Name</label>
+    <label>名称</label>
     <input
       ng-model="editor.field.name"
       required
-      placeholder="New Scripted Field"
+      placeholder="新建脚本字段"
       input-focus
       class="form-control">
   </div>
   <div ng-if="editor.creating && editor.indexPattern.fields.byName[editor.field.name]" class="hintbox">
     <p>
       <i class="fa fa-danger text-danger"></i>
-      <strong>Mapping Conflict:</strong>
-      You already have a field with the name {{ editor.field.name }}. Naming your scripted
-      field with the same name means you won't be able to query both fields at the same time.
+      <strong>映射冲突:</strong>
+      您已经拥有一个字段 {{ editor.field.name }}. 同名的字段意味着您不能同时查询这两个字段，请命名你的脚本。
     </p>
   </div>
 
   <div class="form-group">
-    <label>Type</label>
+    <label>类型</label>
     <input
       ng-model="editor.field.type"
       readonly
@@ -27,18 +26,18 @@
 
   <div class="form-group">
     <span class="pull-right text-warning hintbox-label" ng-click="editor.showFormatHelp = !editor.showFormatHelp">
-      <i class="fa fa-warning"></i> Warning
+      <i class="fa fa-warning"></i> 警告
     </span>
 
-    <label>Format <small>(Default: <i>{{editor.defFormatType.resolvedTitle}}</i>)</small></label>
+    <label>格式 <small>(默认: <i>{{editor.defFormatType.resolvedTitle}}</i>)</small></label>
 
     <div class="hintbox" ng-if="editor.showFormatHelp">
       <h4 class="hintbox-heading">
-        <i class="fa fa-warning text-warning"></i> Format Warning
+        <i class="fa fa-warning text-warning"></i> 格式警告
       </h4>
 
       <p>
-        Formatting allows you to control the way that specific values are displayed. It can also cause values to be completely changed and prevent highlighting in Discover from working.
+       在查询分析时格式化允许您控制特定值的显示方式。它也可以使值被完全改变和阻止高亮。
       </p>
     </div>
 
@@ -56,7 +55,7 @@
   </div>
 
   <div class="form-group">
-    <label for="editor.field.count">Popularity</label>
+    <label for="editor.field.count">普及</label>
     <div class="input-group">
 
       <input
@@ -68,14 +67,14 @@
         <button
           type="button"
           ng-click="editor.field.count = editor.field.count + 1"
-          aria-label="Plus"
+          aria-label="加"
           class="btn btn-default">
           <i aria-hidden="true" class="fa fa-plus"></i>
         </button>
         <button
           type="button"
           ng-click="editor.field.count = editor.field.count - 1"
-          aria-label="Minus"
+          aria-label="减"
           class="btn btn-default">
           <i aria-hidden="true" class="fa fa-minus"></i>
         </button>
@@ -85,7 +84,7 @@
 
   <div ng-if="editor.field.scripted">
     <div class="form-group">
-      <label>Script</label>
+      <label>脚本</label>
       <textarea required class="form-control text-monospace" ng-model="editor.field.script"></textarea>
     </div>
 
@@ -103,9 +102,9 @@
     <button
       type="button"
       ng-click="editor.cancel()"
-      aria-label="Cancel"
+      aria-label="取消"
       class="btn btn-primary">
-      Cancel
+      取消
     </button>
     <button
       type="button"
@@ -114,14 +113,14 @@
       confirmation="Are you sure want to delete '{{ editor.field.name }}'? This action is irreversible!"
       aria-label="Delete"
       class="btn btn-danger">
-      Delete Field
+      删除字段
     </button>
     <button
       ng-disabled="form.$invalid"
       type="submit"
-      aria-label="{{ editor.creating ? 'Create' : 'Update' }} Field"
+      aria-label="{{ editor.creating ? '创建' : '更新' }} Field"
       class="btn btn-success">
-      {{ editor.creating ? 'Create' : 'Update' }} Field
+      {{ editor.creating ? '创建' : '更新' }} 字段
     </button>
   </div>
 </form>

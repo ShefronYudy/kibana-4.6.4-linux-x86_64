@@ -1,25 +1,25 @@
 <div ng-if="!req.stopped" class="visualize-spy-loading">
   <div class="visualize-spy-loading-text">
-    Request in progress
+    处理请求
     &nbsp;
     <div class="spinner"></div>
   </div>
 </div>
 
 <div ng-if="req.stopped && req.success === false" ng-init="console.log(req)" class="alert alert-danger">
-  <i class="fa fa-danger"></i> Request Failed
+  <i class="fa fa-danger"></i> 请求失败
 </div>
 
 <div ng-show="spy.mode.name === 'request'">
   <label>
-    Elasticsearch request body &nbsp;
+    Elasticsearch 请求体 &nbsp;
   </label>
   <pre>{{req.fetchParams.body | json}}</pre>
 </div>
 
 <div ng-show="spy.mode.name === 'response'">
   <label>
-    Elasticsearch response body &nbsp;
+    Elasticsearch 响应体 &nbsp;
   </label>
   <pre>{{req.resp | json}}</pre>
 </div>

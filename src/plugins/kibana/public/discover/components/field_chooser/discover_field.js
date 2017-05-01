@@ -30,23 +30,23 @@ define(function (require) {
 
           if (!field.scripted) {
             if (!field.doc_values && field.type !== 'boolean' && !(field.analyzed && field.type === 'string')) {
-              warnings.push('Doc values are not enabled on this field. This may lead to excess heap consumption when visualizing.');
+              warnings.push('这个字段的文档值未启用. 可视化可能会导致多余的堆消耗.');
             }
 
             if (field.analyzed && field.type === 'string') {
-              warnings.push('This is an analyzed string field.' +
-                ' Analyzed strings are highly unique and can use a lot of memory to visualize.' +
-                ' Values such as foo-bar will be broken into foo and bar.');
+              warnings.push('这是一个分析的字符串字段.' +
+                ' 分析的字符串是高度唯一，可视化需要使用许多内存.' +
+                ' 像“foo-bar”的值将被拆分为“foo”和“bar”.');
             }
 
             if (!field.indexed) {
-              warnings.push('This field is not indexed and can not be visualized.');
+              warnings.push('此字段未被索引(indexed)不能展现.');
             }
           }
 
 
           if (field.scripted) {
-            warnings.push('Scripted fields can take a long time to execute.');
+            warnings.push('脚本字段执行耗费时间有点长.');
           }
 
           if (warnings.length > 1) {

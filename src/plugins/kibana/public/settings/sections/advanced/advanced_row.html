@@ -37,7 +37,7 @@
         elastic-textarea
         validate-json
         ></textarea>
-      <small ng-show="forms.configEdit.$error.jsonInput">Invalid JSON syntax</small>
+      <small ng-show="forms.configEdit.$error.jsonInput">无效JSON语法</small>
 
       <input
         ng-show="conf.array"
@@ -78,9 +78,9 @@
       ng-click="edit(conf)"
       class="btn btn-default"
       ng-disabled="conf.tooComplex"
-      aria-label="Edit"
+      aria-label="编辑"
       data-test-subj="editButton">
-      <span class="sr-only">Edit</span>
+      <span class="sr-only">编辑</span>
       <i aria-hidden="true" class="fa fa-pencil"></i>
     </button>
 
@@ -89,9 +89,9 @@
       ng-click="save(conf)"
       class="btn btn-success"
       ng-disabled="conf.loading || conf.tooComplex || forms.configEdit.$invalid"
-      aria-label="Save"
+      aria-label="保存"
       data-test-subj="saveButton">
-      <span class="sr-only">Save</span>
+      <span class="sr-only">保存</span>
       <i aria-hidden="true" ng-if="!conf.loading" class="fa fa-save"></i>
       <i aria-hidden="true" ng-if="conf.loading" class="fa fa-spinner"></i>
     </button>
@@ -101,9 +101,9 @@
       ng-click="clear(conf)"
       ng-hide="conf.value === undefined"
       class="btn btn-danger"
-      aria-label="Clear"
+      aria-label="清除"
       data-test-subj="clearButton">
-      <span class="sr-only">Clear</span>
+      <span class="sr-only">清除</span>
       <i aria-hidden="true" class="fa fa-trash-o"></i>
     </button>
 
@@ -111,9 +111,9 @@
       ng-if="conf.editing"
       ng-click="cancelEdit(conf)"
       class="btn btn-default"
-      aria-label="Cancel edit"
+      aria-label="取消编辑"
       data-test-subj="cancelButton">
-      <span class="sr-only">Cancel Edit</span>
+      <span class="sr-only">取消编辑</span>
       <i aria-hidden="true" class="fa fa-times"></i>
     </button>
   </td>

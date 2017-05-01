@@ -1,6 +1,6 @@
 <div ng-controller="aggParam.controller">
   <div class="form-group">
-    <label>Order By</label>
+    <label>排序</label>
     <select
       name="orderBy"
       ng-model="agg.params.orderBy"
@@ -13,7 +13,7 @@
         metric: {{safeMakeLabel(respAgg)}}
       </option>
       <option value="custom" ng-selected="agg.params.orderBy === 'custom'">
-        Custom Metric
+        自定义Metric
       </option>
        <option value="_term" ng-selected="agg.params.orderBy === '_term'">
         Term

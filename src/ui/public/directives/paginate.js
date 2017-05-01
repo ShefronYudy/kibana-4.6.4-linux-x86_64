@@ -48,7 +48,7 @@ define(function (require) {
           { title: '10', value: 10 },
           { title: '25', value: 25 },
           { title: '100', value: 100 },
-          { title: 'All', value: ALL }
+          { title: '所有', value: ALL }
         ];
 
         // setup the watchers, called in the post-link function

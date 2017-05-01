@@ -14,7 +14,7 @@ define(function (require) {
   registry.register(_.constant({
     order: 3,
     name: 'objects',
-    display: 'Objects',
+    display: '对象',
     url: '#/settings/objects'
   }));
 });

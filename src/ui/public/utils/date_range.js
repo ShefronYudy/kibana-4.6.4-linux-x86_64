@@ -4,21 +4,21 @@ define(function (require) {
   return {
     toString: function (range, format) {
       if (!range.from) {
-        return 'Before ' + format(range.to);
+        return format(range.to)+'之前';
       } else if (!range.to) {
-        return 'After ' + format(range.from);
+        return format(range.from)+'之后';
       } else {
-        return format(range.from) + ' to ' + format(range.to);
+        return format(range.from) + ' 到 ' + format(range.to);
       }
     },
     parse: function (rangeString, format) {
-      let chunks = rangeString.split(' to ');
+      let chunks = rangeString.split(' 到 ');
       if (chunks.length === 2) return {from: moment(chunks[0], format), to: moment(chunks[1], format)};
 
-      chunks = rangeString.split('Before ');
+      chunks = rangeString.split('之前 ');
       if (chunks.length === 2) return {to: moment(chunks[1], format)};
 
-      chunks = rangeString.split('After ');
+      chunks = rangeString.split('之后 ');
       if (chunks.length === 2) return {from: moment(chunks[1], format)};
 
       throw new Error('Error attempting to parse date range: ' + rangeString);

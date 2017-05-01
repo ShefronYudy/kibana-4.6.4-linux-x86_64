@@ -11,7 +11,7 @@ define(function (require) {
   // edited by the object editor.
   require('plugins/kibana/settings/saved_object_registry').register({
     service: 'savedDashboards',
-    title: 'dashboards'
+    title: '仪表盘'
   });
 
   // This is the only thing that gets injected into controllers
@@ -27,8 +27,8 @@ define(function (require) {
 
     this.loaderProperties = {
       name: 'dashboards',
-      noun: 'Dashboard',
-      nouns: 'dashboards'
+      noun: '仪表盘',
+      nouns: '仪表盘'
     };
 
     // Returns a single dashboard by ID, should be the name of the dashboard

@@ -10,7 +10,7 @@ module.exports = function (kbnServer, server, config) {
     return kbnServer.config;
   });
 
-  var tmpl = 'Settings for "<%= key %>" were not applied, check for spelling errors and ensure the plugin is loaded.';
+  var tmpl = '"<%= key %>"的设置还未应用, 请检查拼写错误确保插件已被加载.';
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;

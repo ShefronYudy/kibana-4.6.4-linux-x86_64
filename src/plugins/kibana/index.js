@@ -13,8 +13,8 @@ module.exports = function (kibana) {
 
     uiExports: {
       app: {
-        title: 'Kibana',
-        description: 'the kibana you know and love',
+        title: '日志分析平台',
+        description: '日志分析平台Kibana',
         //icon: 'plugins/kibana/settings/sections/about/barcode.svg',
         main: 'plugins/kibana/kibana',
         uses: ['visTypes', 'spyModes', 'navbarExtensions', 'settingsSections'],

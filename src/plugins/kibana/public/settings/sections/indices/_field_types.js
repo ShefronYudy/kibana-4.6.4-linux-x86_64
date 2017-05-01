@@ -13,11 +13,11 @@ define(function (require) {
       });
 
       return [{
-        title: 'fields',
+        title: '字段',
         index: 'indexedFields',
         count: fieldCount.indexed
       }, {
-        title: 'scripted fields',
+        title: '脚本字段',
         index: 'scriptedFields',
         count: fieldCount.scripted
       }];

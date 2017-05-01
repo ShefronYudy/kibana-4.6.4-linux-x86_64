@@ -1,14 +1,14 @@
 <div ng-switch on="mode" ng-init="mode = 'visualization'" class="dashboard-panel-picker">
   <ul class="nav nav-tabs">
-    <li ng-class="{active: mode == 'visualization'}"><a ng-click="mode='visualization'" title="Visualizations">Visualizations</a></li>
-    <li ng-class="{active: mode == 'search'}"><a ng-click="mode='search'" title="Searches">Searches</a></li>
+    <li ng-class="{active: mode == 'visualization'}"><a ng-click="mode='visualization'" title="Visualizations">视图</a></li>
+    <li ng-class="{active: mode == 'search'}"><a ng-click="mode='search'" title="搜索">搜索</a></li>
   </ul>
 
   <div class="list-group-item" ng-switch-when="visualization">
-    <saved-object-finder title="Choose a visualization" type="visualizations" on-choose="opts.addVis"></saved-object-finder>
+    <saved-object-finder title="选择一个视图" type="visualizations" on-choose="opts.addVis"></saved-object-finder>
   </div>
 
   <div class="list-group-item" ng-switch-when="search">
-    <saved-object-finder title="Choose a search" type="searches" on-choose="opts.addSearch"></saved-object-finder>
+    <saved-object-finder title="选择一个搜索" type="searches" on-choose="opts.addSearch"></saved-object-finder>
   </div>
 </div>

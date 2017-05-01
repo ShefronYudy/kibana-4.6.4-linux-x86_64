@@ -52,13 +52,13 @@ define(function (require) {
         $scope.units = timeUnits;
 
         $scope.relativeOptions = [
-          {text: 'Seconds ago', value: 's'},
-          {text: 'Minutes ago', value: 'm'},
-          {text: 'Hours ago', value: 'h'},
-          {text: 'Days ago', value: 'd'},
-          {text: 'Weeks ago', value: 'w'},
-          {text: 'Months ago', value: 'M'},
-          {text: 'Years ago', value: 'y'},
+          {text: '秒前', value: 's'},
+          {text: '分前', value: 'm'},
+          {text: '小时前', value: 'h'},
+          {text: '天前', value: 'd'},
+          {text: '周前', value: 'w'},
+          {text: '月前', value: 'M'},
+          {text: '年前', value: 'y'},
         ];
 
         $scope.$watch('from', function (date) {

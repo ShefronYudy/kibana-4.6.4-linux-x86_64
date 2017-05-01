@@ -1,19 +1,19 @@
 <div class="form-group">
   <label for="field">
-    Field
+    字段
   </label>
 
   <span class="pull-right text-warning hintbox-label" ng-show="agg.params.field.analyzed"
       ng-click="showAnalyzedFieldWarning = !showAnalyzedFieldWarning">
-    <i class="fa fa-warning"></i> Analyzed Field
+    <i class="fa fa-warning"></i> 分析的字段
   </span>
   <div class="hintbox" ng-show="showAnalyzedFieldWarning && agg.params.field.analyzed">
     <p>
-    <strong>Careful!</strong> The field selected contains analyzed strings. Analyzed strings are highly unique and can use a lot of memory to visualize. Values such as <i>foo-bar</i> will be broken into <i>foo</i> and <i>bar</i>. See <a href="http://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-types.html" target="_blank">Mapping Types</a> for more information on setting this field as <i>not_analyzed</i>
+    <strong>注意!</strong> 如果选择的字段包含分析(analyzed)的字符串,分析的字符串比较特殊而且在可视化的时候会消耗很多内存.像<i>foo-bar</i>的字符串会被拆分为<i>foo</i>和<i>bar</i>. 查看 <a href="http://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-types.html" target="_blank">映射类型(Mapping Types)</a> 来了解更多关于设置非解析<i>not_analyzed</i>字段内容.
     </p>
 
     <p ng-show="indexedFields.byName[agg.params.field.name + '.raw'].analyzed == false">
-      <strong>Tip:</strong> <i>{{agg.params.field.name + '.raw'}}</i> may be a <i>not_analyzed</i> version of this field.
+      <strong>提示:</strong> <i>{{agg.params.field.name + '.raw'}}</i> 可能是 <i>未分析(not_analyzed)</i> 的字段版本.
     </p>
   </div>
 
@@ -31,7 +31,7 @@
   <div class="hintbox" ng-if="!indexedFields.length">
     <p>
       <i class="fa fa-danger text-danger"></i>
-      <strong>No Compatible Fields:</strong> The "{{ vis.indexPattern.id }}" index pattern does not contain any of the following field types: {{ agg.type.params.byName.field.filterFieldTypes | commaList:false }}
+      <strong>无法编译的字段:</strong> 这个 "{{ vis.indexPattern.id }}" 索引模式未包含下列任何一个字段类型: {{ agg.type.params.byName.field.filterFieldTypes | commaList:false }}
     </p>
   </div>
 

@@ -5,7 +5,7 @@
         <i aria-hidden="true" class="fa fa-times"></i>
       </button>
       <div class="form-group">
-        <label>Range
+        <label>范围
           <small>
             (min:max)
           </small>
@@ -15,7 +15,7 @@
           class="form-control">
       </div>
       <div class="form-group">
-        <label>Font Color</label>
+        <label>字体颜色</label>
         <input
           ng-model="color.text"
           colorpicker
@@ -23,7 +23,7 @@
           class="form-control">
       </div>
       <div class="form-group">
-        <label>Background Color</label>
+        <label>背景颜色</label>
         <input
           ng-model="color.background"
           colorpicker
@@ -31,7 +31,7 @@
           class="form-control">
       </div>
       <div class="form-group">
-        <label>Example</label>
+        <label>样例</label>
           <div class="form-control"
             ng-style="{color: color.text, 'background-color': color.background}"
             value="formatted">
@@ -43,9 +43,9 @@
     <hr>
   </div>
 
-  <button aria-label="Add Color" ng-click="addColor()" tooltip="Add Color" tooltip-append-to-body="true" type="button" class="btn btn-primary btn-xs">
+  <button aria-label="添加颜色" ng-click="addColor()" tooltip="Add Color" tooltip-append-to-body="true" type="button" class="btn btn-primary btn-xs">
       <span class="sr-only">Add Color</span>
-      <i aria-hidden="true" class="fa fa-plus"></i> Add Color
+      <i aria-hidden="true" class="fa fa-plus"></i> 添加颜色
   </button>
 
 </div>

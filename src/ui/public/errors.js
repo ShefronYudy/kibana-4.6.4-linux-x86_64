@@ -31,7 +31,7 @@ define(function (require) {
    */
   errors.HastyRefresh = function HastyRefresh() {
     KbnError.call(this,
-      'Courier attempted to start a query before the previous had finished.',
+      '在上一次查询未结束之前路由又尝试启动一个查询.',
       errors.HastyRefresh);
   };
   _.class(errors.HastyRefresh).inherits(KbnError);
@@ -41,7 +41,7 @@ define(function (require) {
    */
   errors.SearchTimeout = function SearchTimeout() {
     KbnError.call(this,
-      'All or part of your request has timed out. The data shown may be incomplete.',
+      '全部或部分数据请求超时.展示的数据可能不完整.',
       errors.SearchTimeout);
   };
   _.class(errors.SearchTimeout).inherits(KbnError);
@@ -55,7 +55,7 @@ define(function (require) {
     err = err || false;
 
     KbnError.call(this,
-      'Request to Elasticsearch failed: ' + angular.toJson(resp || err.message),
+      '请求Elasticsearch失败: ' + angular.toJson(resp || err.message),
       errors.RequestFailure);
 
     this.origError = err;
@@ -70,7 +70,7 @@ define(function (require) {
    */
   errors.FetchFailure = function FetchFailure(resp) {
     KbnError.call(this,
-      'Failed to get the doc: ' + angular.toJson(resp),
+      '获取文档: ' + angular.toJson(resp)+'失败',
       errors.FetchFailure);
 
     this.resp = resp;
@@ -110,7 +110,7 @@ define(function (require) {
    */
   errors.MappingConflict = function MappingConflict(field) {
     KbnError.call(this,
-      'Field "' + field + '" is defined with at least two different types in indices matching the pattern',
+      '在匹配的索引中字段 "' + field + '"至少在两个不同的类型中定义',
       errors.MappingConflict);
   };
   _.class(errors.MappingConflict).inherits(KbnError);
@@ -143,7 +143,7 @@ define(function (require) {
    */
   errors.FieldNotFoundInCache = function FieldNotFoundInCache(name) {
     KbnError.call(this,
-      'The ' + name + ' field was not found in the cached mappings',
+      '这个 ' + name + ' 字段在缓存的映射中未找到',
       errors.FieldNotFoundInCache);
   };
   _.class(errors.FieldNotFoundInCache).inherits(KbnError);
@@ -154,7 +154,7 @@ define(function (require) {
    */
   errors.DuplicateField = function DuplicateField(name) {
     KbnError.call(this,
-      'The "' + name + '" field already exists in this mapping',
+      '这个 "' + name + '" 字段映射中已存在',
       errors.DuplicateField);
   };
   _.class(errors.DuplicateField).inherits(KbnError);
@@ -168,7 +168,7 @@ define(function (require) {
     this.savedObjectId = id;
     const idMsg = id ? ' (id: ' + id + ')' : '';
     KbnError.call(this,
-      'Could not locate that ' + type + idMsg,
+      '无法获取' + type + idMsg,
       errors.SavedObjectNotFound);
   };
   _.class(errors.SavedObjectNotFound).inherits(KbnError);
@@ -178,7 +178,7 @@ define(function (require) {
    */
   errors.IndexPatternMissingIndices = function IndexPatternMissingIndices(type) {
     KbnError.call(this,
-      'IndexPattern\'s configured pattern does not match any indices',
+      '索引模式中配置的模式没有匹配到任何索引',
       errors.IndexPatternMissingIndices);
   };
   _.class(errors.IndexPatternMissingIndices).inherits(KbnError);
@@ -188,7 +188,7 @@ define(function (require) {
    */
   errors.NoDefinedIndexPatterns = function NoDefinedIndexPatterns(type) {
     KbnError.call(this,
-      'Define at least one index pattern to continue',
+      '请先定义至少一个索引模式',
       errors.NoDefinedIndexPatterns);
   };
   _.class(errors.NoDefinedIndexPatterns).inherits(KbnError);
@@ -199,7 +199,7 @@ define(function (require) {
    */
   errors.NoDefaultIndexPattern = function NoDefaultIndexPattern(type) {
     KbnError.call(this,
-      'Please specify a default index pattern',
+      '请指定一个默认的索引模式',
       errors.NoDefaultIndexPattern);
   };
   _.class(errors.NoDefaultIndexPattern).inherits(KbnError);
@@ -211,7 +211,7 @@ define(function (require) {
    */
   errors.ContainerTooSmall = function ContainerTooSmall() {
     KbnError.call(this,
-    'This container is too small to render the visualization',
+    '这个容器去渲染这个视图有点小',
     errors.ContainerTooSmall);
   };
   _.class(errors.ContainerTooSmall).inherits(KbnError);
@@ -231,7 +231,7 @@ define(function (require) {
    */
   errors.NoResults = function NoResults() {
     KbnError.call(this,
-    'No results found',
+    '未找到记录',
     errors.NoResults);
   };
   _.class(errors.NoResults).inherits(KbnError);
@@ -241,7 +241,7 @@ define(function (require) {
    */
   errors.PieContainsAllZeros = function PieContainsAllZeros() {
     KbnError.call(this,
-      'No results displayed because all values equal 0',
+      '由于所有值都为0,无结果展示',
       errors.PieContainsAllZeros);
   };
   _.class(errors.PieContainsAllZeros).inherits(KbnError);

@@ -9,7 +9,7 @@ define(function (require) {
   // edited by the object editor.
   require('plugins/kibana/settings/saved_object_registry').register({
     service: 'savedVisualizations',
-    title: 'visualizations'
+    title: '视图'
   });
 
   app.service('savedVisualizations', function (Promise, es, kbnIndex, SavedVis, Private, Notifier, kbnUrl) {
@@ -29,8 +29,8 @@ define(function (require) {
 
     this.loaderProperties = {
       name: 'visualizations',
-      noun: 'Visualization',
-      nouns: 'visualizations'
+      noun: '视图',
+      nouns: '视图'
     };
 
     this.get = function (id) {

@@ -9,7 +9,7 @@ import toggleHtml from './toggle.html';
 
 chromeNavControlsRegistry.register(function () {
   return {
-    name: 'timepicker toggle',
+    name: '切换时间选择器',
     order: 100,
     template: toggleHtml
   };

@@ -1,23 +1,23 @@
 <kbn-settings-app section="objects">
   <kbn-settings-objects-view class="container">
     <div class="pull-right" style="margin-top: 20px;">
-      <a href="{{ link }}" class="btn btn-primary">View {{ title }}</a>
-      <a confirm-click="delete()" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete {{ title }} Object</a>
+      <a href="{{ link }}" class="btn btn-primary">查看 {{ title }}</a>
+      <a confirm-click="delete()" class="btn btn-danger"><i class="fa fa-trash-o"></i> 删除 {{ title }} 对象</a>
     </div>
-    <h1>Edit {{ title }} Object</h1>
+    <h1>编辑 {{ title }} 对象</h1>
     <div class="bs-callout bs-callout-danger" ng-if="notFound">
-      <h4>There is a problem with that saved object</h4>
+      <h4>这个保存的对象有问题</h4>
 
-      <p ng-if="notFound === 'search'">The saved search associated with this object no longer exists.</p>
-      <p ng-if="notFound === 'index-pattern'">The index pattern associated with this object no longer exists.</p>
-      <p ng-if="notFound === 'index-pattern-field'">A field associated with this object no longer exists in the index pattern.</p>
+      <p ng-if="notFound === 'search'">这个对象关联保存的搜索已不存在.</p>
+      <p ng-if="notFound === 'index-pattern'">这个对象关联的索引模式已不存在.</p>
+      <p ng-if="notFound === 'index-pattern-field'">这个对象管理的字段在索引模式中已不存在.</p>
 
-      <p>If you know what this error means, go ahead and fix it - otherwise click the delete button above.</p>
+      <p>如果您知道错误原因，请修复它 - 否则点击上边的删除按钮.</p>
     </div>
     <div class="bs-callout bs-callout-warning">
-      <h4>Proceed with caution</h4>
+      <h4>谨慎操作</h4>
 
-      <p>Modifying objects is for advanced users only. Object properties are not validated and invalid objects could cause errors, data loss, or worse. Unless someone with intimate knowledge of the code told you to be in here, you probably shouldn't be.</p>
+      <p>修改对象以供高级用户. 对象属性无效或无效的对象将会引起错误、数据丢失或者更糟.不懂勿做.</p>
     </div>
     <form role="form" name="objectForm" ng-submit="submit()">
       <div class="form-group" ng-repeat="field in fields">
@@ -29,8 +29,8 @@
       </div>
     </form>
     <div class="form-group">
-      <button aria-label="Cancel" class="btn btn-primary" ng-click="cancel()">Cancel</button>
-      <button aria-label="Save {{ title }} Object" class="btn btn-success" ng-click="submit()" ng-disabled="objectForm.$invalid || aceInvalidEditors.length !==0">Save {{ title }} Object</button>
+      <button aria-label="取消" class="btn btn-primary" ng-click="cancel()">取消</button>
+      <button aria-label="保存 {{ title }} 对象" class="btn btn-success" ng-click="submit()" ng-disabled="objectForm.$invalid || aceInvalidEditors.length !==0">保存 {{ title }} 对象</button>
     </div>
   </kbn-settings-objects-view>
 </kbn-settings-app>

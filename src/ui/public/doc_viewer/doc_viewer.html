@@ -1,6 +1,6 @@
 <div class="doc-viewer">
   <ul class="nav nav-tabs">
-    <li ng-class="{active: mode == 'table'}"><a ng-click="mode='table'">Table</a></li>
+    <li ng-class="{active: mode == 'table'}"><a ng-click="mode='table'">表格</a></li>
     <li ng-class="{active: mode == 'json'}"><a ng-click="mode='json'">JSON</a></li>
   </ul>
 
@@ -16,21 +16,21 @@
           <td width="1%" class="doc-viewer-buttons" ng-if="filter">
             <span ng-if="mapping[field].filterable">
               <i ng-click="filter(mapping[field], flattened[field], '+')"
-                tooltip="Filter for value"
+                tooltip="过滤值"
                 tooltip-append-to-body="1"
                 class="fa fa-search-plus"></i>
               <i ng-click="filter(mapping[field], flattened[field],'-')"
-                tooltip="Filter out value"
+                tooltip="过滤掉值"
                 tooltip-append-to-body="1"
                 class="fa fa-search-minus"></i>
             </span>
-            <span ng-if="!mapping[field].filterable" tooltip="Unindexed fields can not be searched">
+            <span ng-if="!mapping[field].filterable" tooltip="无索引字段无法搜索">
               <i class="fa fa-search-plus text-muted"></i>
               <i class="fa fa-search-minus text-muted"></i>
             </span>
             <span ng-if="columns">
               <i ng-click="toggleColumn(field)"
-                tooltip="Toggle column in table"
+                tooltip="在表中切换列"
                 tooltip-append-to-body="1"
                 class="fa fa-columns"></i>
             </span>
@@ -39,15 +39,15 @@
           <td>
             <i ng-if="!mapping[field] && field[0] === '_'"
               tooltip-placement="top"
-              tooltip="Field names beginning with _ are not supported"
+              tooltip="不支持以_开头的字段名称"
               class="fa fa-warning text-color-warning ng-scope doc-viewer-underscore"></i>
             <i ng-if="!mapping[field] && field[0] !== '_' && !showArrayInObjectsWarning(doc, field)"
               tooltip-placement="top"
-              tooltip="No cached mapping for this field. Refresh field list from the Settings > Indices page"
+              tooltip="没有这个字段的缓存映射。 从“设置”>“指数”页面刷新字段列表"
               class="fa fa-warning text-color-warning ng-scope doc-viewer-no-mapping"></i>
             <i ng-if="showArrayInObjectsWarning(doc, field)"
               tooltip-placement="top"
-              tooltip="Objects in arrays are not well supported."
+              tooltip="数组中的对象不太受支持."
               class="fa fa-warning text-color-warning ng-scope doc-viewer-object-array"></i>
             <div class="doc-viewer-value" ng-bind-html="typeof(formatted[field]) === 'undefined' ? hit[field] : formatted[field] | trustAsHtml"></div>
           </td>

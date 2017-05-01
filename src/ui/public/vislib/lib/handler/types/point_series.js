@@ -63,10 +63,8 @@ define(function (require) {
         zeroFill: true,
         alerts: [
           {
-            type: 'warning',
-            msg: 'Positive and negative values are not accurately represented by stacked ' +
-                 'area charts. Either changing the chart mode to "overlap" or using a ' +
-                 'bar chart is recommended.',
+            type: '警告',
+            msg: '堆叠面积图不能够精确地代表正负值.改变图表模式为“重叠”或者推荐使用条形图.',
             test: function (vis, data) {
               if (!data.shouldBeStacked() || data.maxNumberOfSeries() < 2) return;
 
@@ -76,10 +74,8 @@ define(function (require) {
             }
           },
           {
-            type: 'warning',
-            msg: 'Parts of or the entire area chart might not be displayed due to null ' +
-            'values in the data. A line chart is recommended when displaying data ' +
-            'with null values.',
+            type: '警告',
+            msg: '数据中的空值会导致面积图的部分或整个无法展示.此种情况下推荐使用折线图.',
             test: function (vis, data) {
               return data.hasNullValues();
             }

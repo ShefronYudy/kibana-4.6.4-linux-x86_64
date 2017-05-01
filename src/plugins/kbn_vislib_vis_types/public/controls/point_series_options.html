@@ -2,17 +2,17 @@
   <div class="vis-option-item" ng-show="vis.hasSchemaAgg('segment', 'date_histogram')">
     <label>
       <input type="checkbox" ng-model="vis.params.addTimeMarker" ng-checked="vis.params.addTimeMarker">
-      Current time marker
+      当前计时器
     </label>
   </div>
   <div class="vis-option-item">
     <label>
       <input type="checkbox" ng-model="vis.params.setYExtents">
-      Set Y-Axis Extents
+      设置Y轴长度
     </label>
     <div ng-if="vis.params.setYExtents">
       <label>
-        y-max
+        Y轴最大值
         <input name="yMax"
                class="form-control"
                type="number"
@@ -22,10 +22,10 @@
                ng-required="vis.params.setYExtents">
       </label>
       <div ng-show="vis.params.yAxis.min >= vis.params.yAxis.max">
-        <span class="text-danger">Max must be greater than min</span>
+        <span class="text-danger">最大值必须大于最小值</span>
       </div>
       <label>
-        y-min
+        Y轴最小值
         <input name="yMin"
                class="form-control"
                type="number"
@@ -37,12 +37,12 @@
       </label>
     </div>
     <div ng-show="vis.params.setYExtents && vis.params.scale === 'log' && vis.params.yAxis.min <= 0">
-      <span class="text-danger">Min must exceed 0 when a log scale is selected</span>
+      <span class="text-danger">当选择“log”级别时,最小值必须大于0.</span>
     </div>
     <div class="vis-option-item">
       <label>
         <input type="checkbox" ng-model="vis.params.defaultYExtents" ng-disabled="vis.params.setYExtents">
-        Scale Y-Axis to Data Bounds
+        调整Y轴到数据边界内
       </label>
     </div>
   </div>

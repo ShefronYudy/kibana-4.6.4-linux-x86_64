@@ -230,7 +230,7 @@ define(function (require) {
         .catch(function (err) {
           // TODO: we should probably display a message of some kind
           if (err instanceof IndexPatternMissingIndices) {
-            fetchFieldsError = 'Unable to fetch mapping. Do you have indices matching the pattern?';
+            fetchFieldsError = '不能获取映射,您有匹配该模式的索引吗?';
             return [];
           }
 

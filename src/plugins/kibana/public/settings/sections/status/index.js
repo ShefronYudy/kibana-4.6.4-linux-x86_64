@@ -5,7 +5,7 @@ define(function (require) {
   registry.register(_.constant({
     order: 1000,
     name: 'status',
-    display: 'Status',
+    display: '状态',
     url: '/status'
   }));
 });

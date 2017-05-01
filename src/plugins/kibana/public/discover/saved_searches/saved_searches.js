@@ -13,7 +13,7 @@ define(function (require) {
   // edited by the object editor.
   require('plugins/kibana/settings/saved_object_registry').register({
     service: 'savedSearches',
-    title: 'searches'
+    title: '搜索'
   });
 
   module.service('savedSearches', function (Promise, config, kbnIndex, es, createNotifier, SavedSearch, kbnUrl) {
@@ -31,8 +31,8 @@ define(function (require) {
 
     this.loaderProperties = {
       name: 'searches',
-      noun: 'Saved Search',
-      nouns: 'saved searches'
+      noun: '保存的搜索',
+      nouns: '保存的搜索'
     };
 
 

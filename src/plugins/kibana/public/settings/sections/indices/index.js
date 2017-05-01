@@ -47,7 +47,7 @@ define(function (require) {
   registry.register(_.constant({
     order: 1,
     name: 'indices',
-    display: 'Indices',
+    display: '索引',
     url: '#/settings/indices'
   }));
 });

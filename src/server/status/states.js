@@ -4,16 +4,16 @@ var _ = require('lodash');
 
 exports.all = [{
   id: 'red',
-  title: 'Red',
+  title: '红色',
   icon: 'danger',
   severity: 1000,
-  nicknames: ['Danger Will Robinson! Danger!']
+  nicknames: ['Danger Will Robinson! 危险!']
 }, {
   id: 'uninitialized',
-  title: 'Uninitialized',
+  title: '未初始化',
   icon: 'spinner',
   severity: 900,
-  nicknames: ['Initializing']
+  nicknames: ['初始化中...']
 }, {
   id: 'yellow',
   title: 'Yellow',
@@ -22,13 +22,13 @@ exports.all = [{
   nicknames: ['S.N.A.F.U', 'I\'ll be back', 'brb']
 }, {
   id: 'green',
-  title: 'Green',
+  title: '绿色',
   icon: 'success',
   severity: 0,
-  nicknames: ['Looking good']
+  nicknames: ['良好']
 }, {
   id: 'disabled',
-  title: 'Disabled',
+  title: '禁用',
   severity: -1,
   icon: 'toggle-off',
   nicknames: ['I\'m I even a thing?']

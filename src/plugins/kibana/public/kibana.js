@@ -34,22 +34,22 @@ chrome
 .setTabs([
   {
     id: 'discover',
-    title: 'Discover'
+    title: '搜索'
   },
   {
     id: 'visualize',
-    title: 'Visualize',
+    title: '可视化',
     activeIndicatorColor: function () {
       return (String(this.lastUrl).indexOf('/visualize/step/') === 0) ? 'white' : '#656a76';
     }
   },
   {
     id: 'dashboard',
-    title: 'Dashboard'
+    title: '仪表盘'
   },
   {
     id: 'settings',
-    title: 'Settings'
+    title: '配置'
   }
 ])
 .setRootController('kibana', function ($scope, $rootScope, courier, config) {

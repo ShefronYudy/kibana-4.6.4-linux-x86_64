@@ -1,7 +1,7 @@
 <form role="form">
   <div class="form-group finder-form">
     <div class="finder-form-options">
-      <a class="small" ng-click="finder.manageObjects(finder.properties.name)">manage {{finder.properties.nouns}}</a>
+      <a class="small" ng-click="finder.manageObjects(finder.properties.name)">管理{{finder.properties.nouns}}</a>
     </div>
     <div class="clearfix visible-xs-block"></div>
     <input
@@ -41,7 +41,7 @@
     <li
       class="list-group-item list-group-no-results"
       ng-if="finder.hits.length === 0">
-      <p ng-bind="'No matching ' + finder.properties.nouns + ' found.'"></p>
+      <p ng-bind="'没有找到匹配的' + finder.properties.nouns + '.'"></p>
     </li>
   </ul>
 </paginate>
